@@ -1,61 +1,33 @@
-# ReasonReact Template & Examples
+# [Githuber.RE V2](https://huangxuan.me/githuber.re-v2/)
 
-This is:
-- A template for your new ReasonReact project.
-- A collection of thin examples illustrating ReasonReact usage.
-- Extra helper documentation for ReasonReact (full ReasonReact docs [here](https://reasonml.github.io/reason-react/)).
+This project demonstrates the following tech stack:
 
-`src` contains 4 sub-folders, each an independent, self-contained ReasonReact example. Feel free to delete any of them and shape this into your project! This template's more malleable than you might be used to =).
+## [🐫 ReasonML](https://reasonml.github.io/)
 
-The point of this template and examples is to let you understand and personally tweak the entirely of it. We **don't** give you an opaque, elaborate mega build setup just to put some boxes on the screen. It strikes to stay transparent, learnable, and simple. You're encouraged to read every file; it's a great feeling, having the full picture of what you're using and being able to touch any part.
+Reason is a statically-typed, functional programming language backing by OCaml.
 
-## Run
+It leverage both the JavaScript & OCaml ecosystems by providing a familiar syntax geared toward JavaScript programmers and by catering to the existing NPM/Yarn workflow folks already know.
 
-```sh
-npm install
-npm run server
-# in a new tab
-npm start
-```
+## [⚛️ ReasonReact](https://reasonml.github.io/reason-react/en/) with Functional APIs and Hooks.
 
-Open a new web page to `http://localhost:8000/`. Change any `.re` file in `src` to see the page auto-reload. **You don't need any bundler when you're developing**!
+ReasonReact is Reason's official binding to [React.js](https://reactjs.org/). By leveraging the Reason's built-in language features, it pack React.js' APIs into one that is statically-typed, simple, familiar and feels "Just using Reason".
 
-**How come we don't need any bundler during development**? We highly encourage you to open up `index.html` to check for yourself!
+This project used the latest [Function APIs with Hooks](https://reasonml.github.io/reason-react/blog/2019/04/10/react-hooks) and updated built-in [Router API](https://reasonml.github.io/reason-react/docs/en/router).
 
-# Features Used
+## [🕸 Graph_PPX](https://github.com/reasonml-community/graphql_ppx)
 
-|                           | Blinking Greeting | Reducer from ReactJS Docs | Fetch Dog Pictures | Reason Using JS Using Reason |
-|---------------------------|-------------------|---------------------------|--------------------|------------------------------|
-| No props                  |                   | ✓                         |                    |                              |
-| Has props                 |                   |                           |                    | ✓                            |
-| Children props            | ✓                 |                           |                    |                              |
-| No state                  |                   |                           |                    | ✓                            |
-| Has state                 | ✓                 |                           |  ✓                 |                              |
-| Has state with useReducer |                   | ✓                         |                    |                              |
-| ReasonReact using ReactJS |                   |                           |                    | ✓                            |
-| ReactJS using ReasonReact |                   |                           |                    | ✓                            |
-| useEffect                 | ✓                 |                           |  ✓                 |                              |
-| Dom attribute             | ✓                 | ✓                         |                    | ✓                            |
-| Styling                   | ✓                 | ✓                         |  ✓                 | ✓                            |
-| React.array               |                   |                           |  ✓                 |                              |
+GraphQL_PPX is a syntax extension for BuckleScript/Reason. It make constructing GraphQL queries in Reason a first-class experience and type-safe, with compile time type check instead of runtime errors.
 
-# Bundle for Production
+This project used the BS/Reason version of GraphQL from under `reasonml-community`. The [mhallin's](https://github.com/mhallin/graphql_ppx) version used by V1 does not build with OCaml 4.06 unfortunately.
 
-We've included a convenience `UNUSED_webpack.config.js`, in case you want to ship your project to production. You can rename and/or remove that in favor of other bundlers, e.g. Rollup.
+## [📦 BuckleScript](https://bucklescript.github.io/)
 
-We've also provided a barebone `indexProduction.html`, to serve your bundle.
+BuckleScript is a compiler and toolchain that transforms OCaml/Reason into readable JavaScript code. It comes with a powerful API to talk to JS, allowing you to access the latter's vast ecosystem.
 
-```sh
-npm install webpack webpack-cli
-# rename file
-mv UNUSED_webpack.config.js webpack.config.js
-# call webpack to bundle for production
-./node_modules/.bin/webpack
-open indexProduction.html
-```
+This project used its `bsb` build system for generated intial project templates. Checkout [ReasonReact installation](https://reasonml.github.io/reason-react/docs/en/installation#bucklescript) for more details.
 
-# Handle Routing Yourself
+## [🐙 Github GraphQL API](https://developer.github.com/v4/)
 
-To serve the files, this template uses a minimal dependency called `moduleserve`. A URL such as `localhost:8000/scores/john` resolves to the file `scores/john.html`. If you'd like to override this and handle URL resolution yourself, change the `server` command in `package.json` from `moduleserve ./ --port 8000` to `moduleserve ./ --port 8000 --spa` (for "single page application"). This will make `moduleserve` serve the default `index.html` for any URL. Since `index.html` loads `Index.bs.js`, you can grab hold of the URL in the corresponding `Index.re` and do whatever you want.
+[Github announced its public APIs v4 that supports GraphQL](https://githubengineering.com/the-github-graphql-api/). Thanks to that, we can play and demonstrate GraphQL's power without the ceremoies of building our own API server. 
 
-By the way, ReasonReact comes with a small [router](https://reasonml.github.io/reason-react/docs/en/router) you might be interested in.
+
