@@ -8,3 +8,6 @@ npm-debug.log
 
 # BS artifacts
 *.bs.js
+
+# GraphQL ppx
+.graphql_ppx_cache/
