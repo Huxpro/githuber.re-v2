@@ -35,15 +35,15 @@ module SearchQuery = [%graphql
  */
 let renderList = nodes =>
   switch (nodes) {
-  | None => assert(false) /* Empty nodes shouldn't pass usercount check */
+  | None => assert(false) /* Empty nodes shouldn't pass userCount check */
   | Some(nodes) =>
     nodes
     |> Js.Array.map(node =>
          switch (node) {
-         | None => ReasonReact.null
+         | None => React.null
          | Some(node) =>
            switch (node) {
-           | `Nonexhaustive => ReasonReact.null
+           | `Nonexhaustive => React.null
            | `User(user) =>
              let avatarUrl =
                switch (Js.Json.decodeString(user##avatarUrl)) {
@@ -62,7 +62,7 @@ let renderList = nodes =>
            }
          }
        )
-    |> ReasonReact.array
+    |> React.array
   };
 
 let renderNotFound =
@@ -92,7 +92,7 @@ let make = (~search) => {
   );
 
   switch (data) {
-  | None => ReasonReact.null
+  | None => React.null
   | Some(data) =>
     if (data##search##userCount == 0) {
       renderNotFound;
@@ -101,7 +101,7 @@ let make = (~search) => {
         <h4
           className="rc-box"
           style={ReactDOMRe.Style.make(~marginBottom="0", ())}>
-          {ReasonReact.string("Top Results - " ++ search)}
+          {React.string("Top Results - " ++ search)}
         </h4>
         {renderList(data##search##nodes)}
       </ul>;

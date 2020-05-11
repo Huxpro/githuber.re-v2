@@ -20,7 +20,7 @@ let make = () => {
 
   <div className="rc-navbar app-navbar">
     <h1 onClick={_ => ReasonReactRouter.push("/")}>
-      {ReasonReact.string("Githuber.RE")}
+      {React.string("Githuber.RE v2")}
     </h1>
     <form className="flex" onSubmit=onSearch>
       <input
