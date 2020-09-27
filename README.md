@@ -1,5 +1,17 @@
 # [Githuber.RE V2](https://huangxuan.me/githuber.re-v2/)
 
+Get Started:
+
+```sh
+$ npm install
+
+$ npm run start # bsb -make-world
+
+# in another terminal tab
+$ npm run dev  # start dev server
+# noted that the `moduleseve --spa` used by bsb template seem to be broken.
+```
+
 This project demonstrates the following tech stack:
 
 ## [🐫 ReasonML](https://reasonml.github.io/)
