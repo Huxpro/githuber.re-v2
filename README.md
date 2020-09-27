@@ -1,6 +1,6 @@
 # [Githuber.RE V2](https://huangxuan.me/githuber.re-v2/)
 
-Get Started:
+## Get Started:
 
 ```sh
 $ npm install
@@ -9,8 +9,12 @@ $ npm run start # bsb -make-world
 
 # in another terminal tab
 $ npm run dev  # start dev server
-# noted that the `moduleseve --spa` used by bsb template seem to be broken.
 ```
+
+Known issues:
+- Neither `indexDev.html` nor `index.html` work w/ `moduleserve` well.
+
+---
 
 This project demonstrates the following tech stack:
 
