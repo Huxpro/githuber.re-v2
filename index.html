@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <title>Githuber.re V2</title>
-  <link href="style/rc.css" rel="stylesheet" />
+  <title>Githuber.re V2 (Dev)</title>
+  <link href="https://huangxuan.me/githuber.re/static/css/main.048a2b9e.css" rel="stylesheet" />
+  <!-- <link href="style/rc.css" rel="stylesheet" />
   <link href="style/app.css" rel="stylesheet" />
-  <link href="style/nprogress.css" rel="stylesheet" />
+  <link href="style/nprogress.css" rel="stylesheet" /> -->
 </head>
+
 <body>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
   <div id="root"></div>
-  <script src="./bundleOutput/index.js"></script>
+  <script>
+    // stub a variable ReactJS checks. ReactJS assumes you're using a bundler, NodeJS or similar system that provides it the `process.env.NODE_ENV` variable.
+    window.process = {
+      env: {
+        NODE_ENV: 'development'
+      }
+    };
+  </script>
+
+  <!-- This is https://github.com/marijnh/moduleserve, the secret sauce that allows us not need to bundle things during development, and have instantaneous iteration feedback, without any hot-reloading or extra build pipeline needed. -->
+  <script src="/moduleserve/load.js" data-module="/src/Index.bs.js"></script>
+  <!-- Our little watcher. Super clean. Check it out! -->
+  <script src="/watcher.js"></script>
 </body>
+
 </html>

@@ -8,7 +8,6 @@
     "subdirs": true
   },
   "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
-  // "ppx-flags": ["graphql_ppx/ppx"],
   "ppx-flags": ["@baransu/graphql_ppx_re/ppx"],
   "package-specs": [
     {

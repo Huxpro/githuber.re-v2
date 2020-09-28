@@ -1,3 +1,7 @@
+let isDev = [%raw
+  {| window.process && window.process.env.NODE_ENV == "development" |}
+];
+
 [@react.component]
 let make = () => {
   let searchRef = React.useRef(Js.Nullable.null);
@@ -20,7 +24,11 @@ let make = () => {
 
   <div className="rc-navbar app-navbar">
     <h1 onClick={_ => ReasonReactRouter.push("/")}>
-      {React.string("Githuber.RE v2")}
+      {if (isDev) {
+         React.string("Githuber.RE v2 (DEV)");
+       } else {
+         React.string("Githuber.RE v2");
+       }}
     </h1>
     <form className="flex" onSubmit=onSearch>
       <input

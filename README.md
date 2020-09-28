@@ -4,15 +4,10 @@
 
 ```sh
 $ npm install
-
 $ npm run start # bsb -make-world
-
 # in another terminal tab
 $ npm run dev  # start dev server
 ```
-
-Known issues:
-- Neither `indexDev.html` nor `index.html` work w/ `moduleserve` well.
 
 ---
 

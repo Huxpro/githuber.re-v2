@@ -6,7 +6,7 @@
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "dev": "moduleserve ./ --port 8000 --spa",
-    "prod": "./node_modules/.bin/webpack",
+    "prod": "./node_modules/.bin/webpack && ./build-gh-pages.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,8 +26,7 @@
   },
   "devDependencies": {
     "@baransu/graphql_ppx_re": "^0.7.1",
-    "bs-platform": "^7.2.2",
-    "graphql_ppx": "^0.2.8",
+    "bs-platform": "^8.2.0",
     "moduleserve": "^0.9.0"
   }
 }

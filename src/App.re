@@ -1,13 +1,20 @@
+// If the expected basename occured, strip it out from the path.
+// This is to handle cases when the app is hosted under `/github.re-v2/`.
+let stripBasename = (path) => {
+  switch(path) {
+  | ["githuber.re-v2", ...path] => path
+  | path => path
+  }
+};
+
 [@react.component]
 let make = () => {
   let url = ReasonReactRouter.useUrl();
 
-  // It's known that we didn't handle the case when the app is hosted under a
-  // basename. As a result, routing on <huangxuan.me/githuber.re-v2> is broken.
   let currentPage =
-    switch (url.path) {
+    switch (stripBasename(url.path)) {
     | [] => <Home />
-    | ["serch", search] => <Search search />
+    | ["search", search] => <Search search />
     | ["user", user] => <User user />
     | _ => <NotFound />
     };
