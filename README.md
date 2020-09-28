@@ -9,6 +9,10 @@ $ npm run start # bsb -make-world
 $ npm run dev  # start dev server
 ```
 
+Known issues:
+- Routing is messed up for when the app is hosted with basename.
+  - The V1 of this project did handle it by wrapping ReasonReactRouter.
+
 ---
 
 This project demonstrates the following tech stack:
@@ -29,7 +33,7 @@ This project used the latest [Function APIs with Hooks](https://reasonml.github.
 
 GraphQL_PPX is a syntax extension for BuckleScript/Reason. It make constructing GraphQL queries in Reason a first-class experience and type-safe, with compile time type check instead of runtime errors.
 
-This project used the BS/Reason version of GraphQL from under `reasonml-community`. The [mhallin's](https://github.com/mhallin/graphql_ppx) version used by V1 does not build with OCaml 4.06 unfortunately.
+This project used the BS/Reason version of GraphQL from the `reasonml-community`. The [mhallin's](https://github.com/mhallin/graphql_ppx) version used by the V1 of this project does not build with OCaml 4.06 unfortunately.
 
 ## [📦 BuckleScript](https://bucklescript.github.io/)
 
