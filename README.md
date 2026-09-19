@@ -1,4 +1,4 @@
-# [Githuber.RE V2](https://huangxuan.me/githuber.re-v2/)
+# [Githuber.RE V2](https://huxpro.github.io/githuber.re-v2/)
 
 ## Get Started:
 
